@@ -1,0 +1,33 @@
+{
+  "name": "@fdw/dice",
+  "version": "1.0.0",
+  "description": "Dice system for dice games and D&D",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "dev": "yarn build && yarn start",
+    "watch": "nodemon",
+    "start": "node dist/index.js",
+    "test": "yarn build && yarn jest --coverage"
+  },
+  "author": "Benjamin Fukdawurld",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "seedrandom": "^3.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.1",
+    "@types/seedrandom": "^3.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-jest": "^24.4.0",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
+  }
+}
