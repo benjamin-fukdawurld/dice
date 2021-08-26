@@ -1,0 +1,181 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@fdw/dice</title>
+	<meta name="description" content="Documentation for @fdw/dice">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@fdw/dice</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>@fdw/dice</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#dice" id="dice" style="color: inherit; text-decoration: none;">
+					<h1>Dice</h1>
+				</a>
+				<p>A dice system for D&amp;D and other dice games</p>
+				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+					<h2>Install</h2>
+				</a>
+				<a href="#using-npm" id="using-npm" style="color: inherit; text-decoration: none;">
+					<h3>using npm</h3>
+				</a>
+				<p><code>npm install @fdw/dice</code></p>
+				<a href="#using-yarn" id="using-yarn" style="color: inherit; text-decoration: none;">
+					<h3>using yarn</h3>
+				</a>
+				<p><code>yarn add @fdw/dice</code></p>
+				<a href="#dice-notation" id="dice-notation" style="color: inherit; text-decoration: none;">
+					<h2>Dice notation</h2>
+				</a>
+				<p>A dice in D&amp;D can be represented as a string. This string starts with the number of dice (technically the string represent a roll of several dice of the same size) followed by the letter &#39;d&#39; and the number of faces of the dice:</p>
+				<blockquote>
+					<p>&#39;2d6&#39; represents 2 dices of 6 faces</p>
+				</blockquote>
+				<p>A dice can also have a modificator value (positive or negative) that influences the result of the roll:</p>
+				<blockquote>
+					<p>&#39;1d8+3&#39; representents 1 dice of 8 faces plus 3 (the values will be in range [4, 11])</p>
+				</blockquote>
+				<p>You sometimes may need to roll different types of dices. In this case each dice pattern is separated from the next one with &#39; &#39; (<kbd>space</kbd> character):</p>
+				<blockquote>
+					<p>&#39;2d8+3 1d4&#39; represents 2 dices of 8 faces plus 3 and 1 dice of 4 faces</p>
+				</blockquote>
+				<a href="#how-it-works" id="how-it-works" style="color: inherit; text-decoration: none;">
+					<h2>How it works</h2>
+				</a>
+				<p>If you need to roll a single dice type you can use the Dice class:</p>
+				<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">Dice</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;dice/Dice&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// create a Dice from a string</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">d1</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Dice</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;4d4+3&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">/* log a DiceRoll object containing:</span>
+<span style="color: #008000">{</span>
+<span style="color: #008000">  total: random number in range [d1.min, d1.max],</span>
+<span style="color: #008000">  diceValues: an array containing the roll value for each dice,</span>
+<span style="color: #008000">  dice: the dice rolled</span>
+<span style="color: #008000">}</span>
+<span style="color: #008000">*/</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">d1</span><span style="color: #000000">.</span><span style="color: #795E26">roll</span><span style="color: #000000">());</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">d2</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Dice</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">size:</span><span style="color: #000000"> </span><span style="color: #098658">6</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">count:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #008000">// count is optional, default value is 1</span>
+<span style="color: #000000">  </span><span style="color: #001080">modificator:</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000"> </span><span style="color: #008000">// modificator is optional, default value is 0</span>
+<span style="color: #000000">}); </span><span style="color: #008000">// equivalent to new Dice(&#039;2d6+3&#039;)</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">gen</span><span style="color: #000000"> = </span><span style="color: #001080">d2</span><span style="color: #000000">.</span><span style="color: #795E26">generator</span><span style="color: #000000">() </span><span style="color: #008000">// create a generator for the dice</span>
+
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">gen</span><span style="color: #000000">.</span><span style="color: #795E26">next</span><span style="color: #000000">().</span><span style="color: #001080">value</span><span style="color: #000000">) </span><span style="color: #008000">// same as d2.roll() but the generator is iterable</span>
+
+</code></pre>
+				<p>Dice also provide information to allow probability analysis:</p>
+				<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">d</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Dice</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;2d6+3&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">d</span><span style="color: #000000">.</span><span style="color: #001080">min</span><span style="color: #000000">); </span><span style="color: #008000">// the smallest value possible with this dice (i.e. 5 for this dice)</span>
+
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">d</span><span style="color: #000000">.</span><span style="color: #001080">max</span><span style="color: #000000">); </span><span style="color: #008000">// the greatest value possible with this dice (i.e. 15 for this dice)</span>
+
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">d</span><span style="color: #000000">.</span><span style="color: #001080">cardinal</span><span style="color: #000000">); </span><span style="color: #008000">// the number of possible combinations (i.e. size&lt;sup&gt;count&lt;/sup&gt;)</span>
+
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">d</span><span style="color: #000000">.</span><span style="color: #001080">valuesCardinal</span><span style="color: #000000">); </span><span style="color: #008000">// the number of possible values (i.e. max - min + 1)</span>
+
+</code></pre>
+				<p><em>Dice</em> is inmutable, it means you cannot modify size, count or modificator once the Dice is instantiated.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/Dice.html">Dice</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/interfaces_DiceOptions.html">interfaces/<wbr>Dice<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/interfaces_DiceRoll.html">interfaces/<wbr>Dice<wbr>Roll</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/math.html">math</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
