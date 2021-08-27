@@ -18,16 +18,17 @@
     "seedrandom": "^3.0.5"
   },
   "devDependencies": {
+    "@ptkdev/all-shields-cli": "^2.0.2",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.1",
     "@types/seedrandom": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
-    "gh-pages": "^3.2.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.1",
     "eslint-plugin-jest": "^24.4.0",
+    "gh-pages": "^3.2.3",
     "jest": "^27.0.6",
     "nodemon": "^2.0.12",
     "ts-jest": "^27.0.5",

@@ -1,0 +1,40 @@
+{
+	"files": ["README.md"],
+	"shields": [
+		{
+			"id": "badges",
+			"badges": [
+				{
+					"url": "https://www.npmjs.com/package/@fdw/dice",
+					"color": "red",
+					"label": "npm",
+					"title": "npm",
+					"message": "{{version}}",
+					"style": "flat",
+					"logo": "npm",
+					"platform": "shields"
+				},
+				{
+					"url": "https://www.typescriptlang.org/",
+					"color": "blue",
+					"label": "language",
+					"title": "language",
+					"message": "Typescript",
+					"style": "flat",
+					"logo": "typescript",
+					"platform": "shields"
+				},
+				{
+					"url": "https://www.jestjs.io/",
+					"color": "limegreen",
+					"label": "global coverage",
+					"title": "global coverage",
+					"message": "100%",
+					"style": "flat",
+					"logo": "jest",
+					"platform": "shields"
+				}
+			]
+		}
+	]
+}
