@@ -118,7 +118,7 @@ export default {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  setupFiles: ['<rootDir>/.jest/setEnvVars.ts'],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   // setupFilesAfterEnv: [],
@@ -133,7 +133,9 @@ export default {
   testEnvironment: 'node',
 
   // Options that will be passed to the testEnvironment
-  // testEnvironmentOptions: {},
+  testEnvironmentOptions: {
+    DICE_RANDOM_SEED: 'test',
+  },
 
   // Adds a location field to test results
   // testLocationInResults: false,
