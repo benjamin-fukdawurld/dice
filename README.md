@@ -2,6 +2,12 @@
 
 A dice system for D&amp;D and other dice games
 
+<!-- all-shields/badges:START -->
+
+[![global coverage](https://img.shields.io/badge/global%20coverage-100%25-limegreen.svg?style=flat&logo=jest)](#)
+
+<!-- all-shields/badges:END -->
+
 ## Install
 
 ### using npm

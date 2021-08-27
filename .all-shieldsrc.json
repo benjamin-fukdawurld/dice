@@ -1,0 +1,20 @@
+{
+	"files": ["README.md"],
+	"shields": [
+		{
+			"id": "badges",
+			"badges": [
+				{
+					"url": "#",
+					"color": "limegreen",
+					"label": "global coverage",
+					"title": "global coverage",
+					"message": "100%",
+					"style": "flat",
+					"logo": "jest",
+					"platform": "shields"
+				}
+			]
+		}
+	]
+}
