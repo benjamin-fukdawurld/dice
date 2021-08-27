@@ -2,9 +2,12 @@
 
 A dice system for D&amp;D and other dice games
 
+[![Build](https://github.com/benjamin-fukdawurld/dice/actions/workflows/build.yml/badge.svg?event=release)](https://github.com/benjamin-fukdawurld/dice/actions/workflows/build.yml)
+[![Jest Tests](https://github.com/benjamin-fukdawurld/dice/actions/workflows/unit-test.yml/badge.svg?event=release)](https://github.com/benjamin-fukdawurld/dice/actions/workflows/unit-test.yml)
+
 <!-- all-shields/badges:START -->
 
-[![global coverage](https://img.shields.io/badge/global%20coverage-100%25-limegreen.svg?style=flat&logo=jest)](#)
+[![npm](https://img.shields.io/badge/npm-1.0.0-red.svg?style=flat&logo=npm)](https://www.npmjs.com/package/@fdw/dice) [![language](https://img.shields.io/badge/language-Typescript-blue.svg?style=flat&logo=typescript)](https://www.typescriptlang.org/) [![global coverage](https://img.shields.io/badge/global%20coverage-100%25-limegreen.svg?style=flat&logo=jest)](https://www.jestjs.io/)
 
 <!-- all-shields/badges:END -->
 
@@ -37,7 +40,7 @@ You sometimes may need to roll different types of dices. In this case each dice 
 If you need to roll a single dice type you can use the Dice class:
 
 ```
-const Dice = require('dice/Dice');
+const Dice = require('dice').Dice;
 
 // create a Dice from a string
 const d1 = new Dice('4d4+3');
@@ -79,3 +82,57 @@ console.log(d.valuesCardinal); // the number of possible values (i.e. max - min 
 ```
 
 _Dice_ is inmutable, it means you cannot modify size, count or modificator once the Dice is instantiated.
+
+If you want to roll several types of dice you can use the DiceSet class:
+
+```
+const DiceSet = require('dice').DiceSet;
+
+// create a DiceSet from a string
+const d1 = new DiceSet('4d4+3', '2d6+3');
+
+/* log a DiceSetRoll object containing:
+{
+  total: random number in range [d1.min, d1.max],
+  diceRolls: an array containing the DiceRoll of each Dice
+}
+*/
+console.log(d1.roll());
+
+const d2 = new DiceSet(diceOptions: [{
+/*
+ * you may also pass an array of dices using the 'dices' option.
+ * if you pass both options the set wil contain:
+ * [
+ *   ...dices,
+ *   ...diceOptions.map((opt) => new Dice(opt))
+ * ]
+ */
+  size: 4,
+  count: 4,
+  modificator: 3
+}, {
+  size: 6,
+  count: 2,
+  modificator: 3
+}]); // equivalent to new DiceSet('4d4+3 2d6+3')
+
+const gen = d2.generator() // create a generator for the dice set
+
+console.log(gen.next().value) // same as d2.roll() but the generator is iterable
+```
+
+DiceSet provide information to allow probability analysis too:
+
+```
+const d = new DiceSet('2d6+3 1d4');
+
+console.log(d.min); // the smallest value possible with this dice (i.e. 6 for this dice)
+
+console.log(d.max); // the greatest value possible with this dice (i.e. 19 for this dice)
+
+console.log(d.cardinal); // the number of possible combinations (i.e. 6<sup>2</sup>*4<sup>1</sup>)
+
+console.log(d.valuesCardinal); // the number of possible values (i.e. max - min + 1)
+
+```
