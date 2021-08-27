@@ -5,7 +5,27 @@
 			"id": "badges",
 			"badges": [
 				{
-					"url": "#",
+					"url": "https://www.npmjs.com/package/@fdw/dice",
+					"color": "red",
+					"label": "npm",
+					"title": "npm",
+					"message": "{{version}}",
+					"style": "flat",
+					"logo": "npm",
+					"platform": "shields"
+				},
+				{
+					"url": "https://www.typescriptlang.org/",
+					"color": "blue",
+					"label": "language",
+					"title": "language",
+					"message": "Typescript",
+					"style": "flat",
+					"logo": "typescript",
+					"platform": "shields"
+				},
+				{
+					"url": "https://www.jestjs.io/",
 					"color": "limegreen",
 					"label": "global coverage",
 					"title": "global coverage",
