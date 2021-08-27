@@ -8,7 +8,9 @@
     "dev": "yarn build && yarn start",
     "watch": "nodemon",
     "start": "node dist/index.js",
-    "test": "yarn build && yarn jest --coverage"
+    "test": "yarn build && yarn jest --coverage",
+    "doc:generate": "npx typedoc --out doc ./src",
+    "doc:publish": "npx gh-pages -d doc"
   },
   "author": "Benjamin Fukdawurld",
   "license": "GPL-3.0-or-later",

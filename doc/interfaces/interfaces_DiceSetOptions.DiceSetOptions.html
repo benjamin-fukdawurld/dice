@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DiceOptions | @fdw/dice</title>
+	<title>DiceSetOptions | @fdw/dice</title>
 	<meta name="description" content="Documentation for @fdw/dice">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,13 +55,13 @@
 					<a href="../modules.html">@fdw/dice</a>
 				</li>
 				<li>
-					<a href="../modules/interfaces_DiceOptions.html">interfaces/DiceOptions</a>
+					<a href="../modules/interfaces_DiceSetOptions.html">interfaces/DiceSetOptions</a>
 				</li>
 				<li>
-					<a href="interfaces_DiceOptions.DiceOptions.html">DiceOptions</a>
+					<a href="interfaces_DiceSetOptions.DiceSetOptions.html">DiceSetOptions</a>
 				</li>
 			</ul>
-			<h1>Interface DiceOptions</h1>
+			<h1>Interface DiceSetOptions</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>An interface representing the informations necessary to create a Dice</p>
+						<p>An interface representing the informations necessary to create a DiceSet</p>
 					</div>
 				</div>
 			</section>
@@ -79,7 +79,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DiceOptions</span>
+						<span class="target">DiceSetOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -90,9 +90,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="interfaces_DiceOptions.DiceOptions.html#count" class="tsd-kind-icon">count</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="interfaces_DiceOptions.DiceOptions.html#modificator" class="tsd-kind-icon">modificator</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="interfaces_DiceOptions.DiceOptions.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="interfaces_DiceSetOptions.DiceSetOptions.html#diceOptions" class="tsd-kind-icon">dice<wbr>Options</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="interfaces_DiceSetOptions.DiceSetOptions.html#dices" class="tsd-kind-icon">dices</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,47 +100,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="count" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> count</h3>
-					<div class="tsd-signature tsd-kind-icon">count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="diceOptions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> dice<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">dice<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="interfaces_DiceOptions.DiceOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">DiceOptions</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/benjamin-fukdawurld/dice/blob/3b35a91/src/interfaces/DiceOptions.ts#L9">interfaces/DiceOptions.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/benjamin-fukdawurld/dice/blob/3b35a91/src/interfaces/DiceSetOptions.ts#L12">interfaces/DiceSetOptions.ts:12</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The number of dice</p>
+							<p>An array of options to create dices for the set</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="modificator" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> modificator</h3>
-					<div class="tsd-signature tsd-kind-icon">modificator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="dices" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> dices</h3>
+					<div class="tsd-signature tsd-kind-icon">dices<span class="tsd-signature-symbol">:</span> <a href="../classes/Dice.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/benjamin-fukdawurld/dice/blob/3b35a91/src/interfaces/DiceOptions.ts#L12">interfaces/DiceOptions.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/benjamin-fukdawurld/dice/blob/3b35a91/src/interfaces/DiceSetOptions.ts#L9">interfaces/DiceSetOptions.ts:9</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The modificator to apply to the dice roll results</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="size" class="tsd-anchor"></a>
-					<h3>size</h3>
-					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/benjamin-fukdawurld/dice/blob/3b35a91/src/interfaces/DiceOptions.ts#L6">interfaces/DiceOptions.ts:6</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The number of faces of the Dice</p>
+							<p>An array of dices to add to the set</p>
 						</div>
 					</div>
 				</section>
@@ -159,13 +143,13 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/DiceSet.html">Dice<wbr>Set</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/interfaces_DiceOptions.html">interfaces/<wbr>Dice<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/interfaces_DiceRoll.html">interfaces/<wbr>Dice<wbr>Roll</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/interfaces_DiceSetOptions.html">interfaces/<wbr>Dice<wbr>Set<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -181,16 +165,13 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="interfaces_DiceOptions.DiceOptions.html" class="tsd-kind-icon">Dice<wbr>Options</a>
+						<a href="interfaces_DiceSetOptions.DiceSetOptions.html" class="tsd-kind-icon">Dice<wbr>Set<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="interfaces_DiceOptions.DiceOptions.html#count" class="tsd-kind-icon">count</a>
+								<a href="interfaces_DiceSetOptions.DiceSetOptions.html#diceOptions" class="tsd-kind-icon">dice<wbr>Options</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="interfaces_DiceOptions.DiceOptions.html#modificator" class="tsd-kind-icon">modificator</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="interfaces_DiceOptions.DiceOptions.html#size" class="tsd-kind-icon">size</a>
+								<a href="interfaces_DiceSetOptions.DiceSetOptions.html#dices" class="tsd-kind-icon">dices</a>
 							</li>
 						</ul>
 					</li>
