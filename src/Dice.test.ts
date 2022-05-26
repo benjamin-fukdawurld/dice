@@ -1,3 +1,5 @@
+import { describe, jest, it, expect } from '@jest/globals';
+
 import Dice from './Dice';
 
 let randomIntCounter = 0;

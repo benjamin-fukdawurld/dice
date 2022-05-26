@@ -1,3 +1,4 @@
+import { describe, it, expect } from '@jest/globals';
 import math from './math';
 
 describe("math.randomInt, given the random seed 'test'", () => {

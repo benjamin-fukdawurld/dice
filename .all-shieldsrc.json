@@ -5,7 +5,7 @@
 			"id": "badges",
 			"badges": [
 				{
-					"url": "https://www.npmjs.com/package/@fdw/dice",
+					"url": "https://www.npmjs.com/package/@benjamin_fdw/dice",
 					"color": "red",
 					"label": "npm",
 					"title": "npm",

@@ -18,13 +18,9 @@ module.exports = {
         devDependencies: ['**/*.test.ts', '**/*.spec.ts'],
       },
     ],
-    'import/extensions': [
-      'error',
-      'always',
-      {
-        ts: 'never',
-        js: 'never',
-      },
-    ],
+    'import/extensions': 'off',
+    'no-underscore-dangle': ['error', { allowAfterThis: true }],
+    'generator-star-spacing': ['error', { before: true, after: false }],
+    'no-plusplus': 'off',
   },
 };
