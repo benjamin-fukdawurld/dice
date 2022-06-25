@@ -23,4 +23,11 @@ module.exports = {
     'generator-star-spacing': ['error', { before: true, after: false }],
     'no-plusplus': 'off',
   },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
 };
